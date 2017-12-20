@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('first') {
       steps {
-        sh '''mvn -B -DskipTests clean package
-'''
+        sh '''~/apache-maven-3.5.2/bin/mvn -B -DskipTests clean package'''
       }
     }
   }
