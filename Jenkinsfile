@@ -3,12 +3,12 @@ pipeline {
     node {
       label 'mesos'
     }
-
+    
   }
   stages {
     stage('first') {
       steps {
-        sh '''mvn -B -DskipTests clean package'''
+        sh 'mvn -B -DskipTests clean'
       }
     }
   }
