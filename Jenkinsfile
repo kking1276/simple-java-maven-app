@@ -33,6 +33,18 @@ pipeline {
 
     stage('Test') {
       steps {
+       	runTests()
+      }
+    }
+
+    stage('Package') {
+      steps {
+        sh '''mvn -B -DskipTests package'''
+      }
+    }
+  }
+
+	def runTests() {
 		def splits = splitTests count(2)
 		def branches = [:]
 		for (int i = 0; i < splits.size(); i++) {
@@ -49,13 +61,5 @@ pipeline {
 		  }
 		}
 		parallel branches
-      }
-    }
-
-    stage('Package') {
-      steps {
-        sh '''mvn -B -DskipTests package'''
-      }
-    }
   }
 }
