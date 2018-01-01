@@ -1,3 +1,4 @@
+#!/usr/bin/env groovy
 pipeline {
   agent {
     node {
@@ -44,7 +45,7 @@ pipeline {
     }
   }
 
-	def runTests() {
+	void runTests() {
 		def splits = splitTests count(2)
 		def branches = [:]
 		for (int i = 0; i < splits.size(); i++) {
