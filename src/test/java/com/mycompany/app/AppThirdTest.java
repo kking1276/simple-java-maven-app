@@ -34,12 +34,9 @@ public class AppThirdTest
     {
         App.main(null);
         try {
-			Thread.sleep(2000l);
         	assertEquals("Hello World!" + System.getProperty("line.separator"), outContent.toString());
         } catch (AssertionError e) {
             fail("\"message\" is not \"Hello World!\"");
-        } catch (InterruptedException e) {
-        	fail("sleep interrupted." + e.getMessage());
 		}
     }
 
@@ -59,7 +56,7 @@ public class AppThirdTest
     {
         App.main(null);
         try {
-			Thread.sleep(2000l);
+			Thread.sleep(5000l);
             assertEquals("Hello World!" + System.getProperty("line.separator"), outContent.toString());
         } catch (AssertionError e) {
             fail("\"message\" is not \"Hello World!\"");
