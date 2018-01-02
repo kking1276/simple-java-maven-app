@@ -41,7 +41,7 @@ public class AppTest2
     }
 
     @Test
-    public void testAppMain1()
+    public void testAppMain3()
     {
         App.main(null);
         try {
@@ -52,7 +52,7 @@ public class AppTest2
     }
 
     @Test
-    public void testAppMain2()
+    public void testAppMain4()
     {
         App.main(null);
         try {
