@@ -17,7 +17,7 @@ pipeline {
     stage('Clean') {
       steps {
         sh 'git status'
-        input message: 'Continue?', ok: 'Continue'
+//        input message: 'Continue?', ok: 'Continue'
         sh 'mvn -B -DskipTests clean'
       }
     }
