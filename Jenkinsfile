@@ -45,9 +45,8 @@ pipeline {
 			      deleteDir()
 			      unstash 'sources'
 			      def exclusions = splits.get(index);
-println exclusions.join("\n")
 			      writeFile file: 'exclusions.txt', text: exclusions.join("\n")
-			      sh "${tool 'M3'}/bin/mvn -B -Dmaven.test.failure.ignore test -Dsurefire.excludesFile=exclusions.txt"
+			      sh "${tool 'M3'}/bin/mvn -B -Dmaven.test.failure.ignore -Dsurefire.excludesFile=exclusions.txt test"
 			      junit 'target/surefire-reports/*.xml'
 			    }
 			  }
